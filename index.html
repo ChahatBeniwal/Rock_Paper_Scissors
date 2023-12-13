@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+    <meta charset="UTF-8">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissor</title>
+        <style>
+        body {
+            background-color: #a3bca9;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .arrow.clicked {
+            transform: rotate(180deg);
+        }
+
+    </style>
+</head>
+
+<body>
+        <h1>Rock-Paper-Scissors</h1>
+        <img src="./Images/download.jpg" alt="rps" >
+        <h2>Computer Choice:<span id="computer-choice"></span></h2>
+        <h2>Your Choice:<span id="user-choice"></span></h2>
+        <h2>Result:<span id="result"></span></h2>
+
+        <button id="rock">Rock<span class="arrow"></span></button>
+        <button id="paper">Paper<span class="arrow"></span></button>
+        <button id="scissors">Scissors<span class="arrow"></span></button>
+       
+    <script src="index.js" charset="UTF-8"></script>
+       
+    <script>
+        const buttons = document.querySelectorAll('button');
+        const computerChoice = document.getElementById('computer-choice');
+        const userChoice = document.getElementById('user-choice');
+        const result = document.getElementById('result');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.querySelector('.arrow').classList.toggle('clicked');
+                computerChoice.style.color = '#e1d4c1';
+                userChoice.style.color = '#e1d4c1';
+                result.style.color = '#e1d4c1';
+            });
+        });
+    </script>
+</body>
+
+</html>
